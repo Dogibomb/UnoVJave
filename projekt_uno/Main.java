@@ -94,11 +94,199 @@ public class Main {
                 System.out.println("XXXXXXXXXXXXXXXXXXXXX");
                 continue;
             }
+            else{
+                    if (Jednakarta.charAt(0) == input.charAt(0)){
+                        if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                    }
+                    else if (Jednakarta.contains("m")){
+                        if(input.contains("m")){
+
+                        SpecialKarty(input, hrac1, kartyHrace1list, kartyHrace2list, karty);
+
+                        if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                    }
+                    else{
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        System.out.println("Neplatná Karta? Stupid!");
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        continue;
+                    }
+                }
+                else if (Jednakarta.contains("zl")){
+                    if(input.contains("zl")){
+
+                        SpecialKarty(input, hrac1, kartyHrace1list, kartyHrace2list, karty);
+
+                        if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                    }
+                    else{
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        System.out.println("Neplatná Karta? Stupid!");
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        continue;
+                    }
+                }
+                else if (Jednakarta.contains("z")){
+                    if(input.contains("z")){
+
+                        SpecialKarty(input, hrac1, kartyHrace1list, kartyHrace2list, karty);
+
+                        if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                    }
+                    else{
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        System.out.println("Neplatná Karta? Stupid!");
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        continue;
+                    }
+                }
+                else if (Jednakarta.contains("cer")) {
+                    if(input.contains("cer")){
+
+                        SpecialKarty(input, hrac1, kartyHrace1list, kartyHrace2list, karty);
+
+                        if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(input)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                    }
+                    else{
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        System.out.println("Neplatná Karta? Stupid!");
+                        System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                        continue;
+                    }
+                }
+                Jednakarta = input;
+            }
         }
         while(hra);
         scanner.close();
 
     }
+    public static void SpecialKarty(String karta, boolean hrac1, ArrayList<String> kartyHrace1list, ArrayList<String> kartyHrace2list, Karty karty){
+        karta = karta.toLowerCase();
+        if (karta.equals("2+m") || karta.equals("2+z") || karta.equals("2+zl") || karta.equals("2+cer")){
+            if (hrac1){
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+            }
+            else{
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+            }
+            }
+        else if (karta.equals("4+m") || karta.equals("4+z") || karta.equals("4+zl") || karta.equals("4+cer")){
+            if (hrac1){
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                }
+            else{
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                }
+            }
+        else{
+            System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("Neplatná Karta? Stupid!");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+        }
+
+            if(hrac1){
+                            for (int i = 0; i < kartyHrace1list.size(); i++) {
+                            if (kartyHrace1list.get(i).equalsIgnoreCase(karta)) {
+                                kartyHrace1list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+                        else{
+                            for (int i = 0; i < kartyHrace2list.size(); i++) {
+                            if (kartyHrace2list.get(i).equalsIgnoreCase(karta)) {
+                                kartyHrace2list.remove(i);
+                                break;
+                            }
+                        }
+                        }
+
+        }    
+
     public static void Uvitani(ArrayList<String> kartyHrace1list, ArrayList<String> kartyHrace2list, int na_rade, String Jednakarta){
             System.out.println("1. Hráč");
             System.out.println("Počet karet: " + kartyHrace1list.size());
