@@ -71,6 +71,29 @@ public class Main {
                     kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
                 }
             }
+            else if (hrac1) {
+                for(int i = 0; i < kartyHrace1list.size(); i++){
+
+                    if (input.equals(kartyHrace1list.get(i).toString().toLowerCase())) {
+                        kartaExistuje = true;
+
+                    }
+                }
+            } 
+            else {
+                for(int i = 0; i < kartyHrace2list.size(); i++){
+                    if (input.equals(kartyHrace2list.get(i).toString().toLowerCase())) {
+                        kartaExistuje = true;
+                    }
+                }
+            }
+            Jednakarta = Jednakarta.toLowerCase();
+            if (!kartaExistuje) {
+                System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                System.out.println("Neplatná karta. / Nebo si liznul (bug ktery urcite opravovat nebudu)"); 
+                System.out.println("XXXXXXXXXXXXXXXXXXXXX");
+                continue;
+            }
         }
         while(hra);
         scanner.close();
