@@ -43,7 +43,14 @@ public class Karty {
         }
         return KartyInHands;
     }
-
+        public int getOneKard(){
+        int oneKard = (int)(Math.random() * karty.length);
+        return oneKard;
+    }
+    public String getOneColor(){
+        String oneColor = barvy[(int)(Math.random() * barvy.length)];
+        return oneColor;
+    }
 
 
 }

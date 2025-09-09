@@ -34,10 +34,7 @@ public class Main {
         ArrayList<String> kartyHrace2list = new ArrayList<String>(Arrays.asList(kartyHrace2));
 
         String Jednakarta = karty.getOneKard() + karty.getOneColor();
-
         
-
-
         boolean hrac1 = true;
         
         Scanner scanner = new Scanner(System.in);
@@ -45,8 +42,8 @@ public class Main {
 
         boolean kartaExistuje = false;
 
+        
         do{
-            
             if (na_rade % 2 == 0) {
                 System.out.println("------------------------");
                 System.out.println("Hráč 1 je na řadě");
@@ -59,8 +56,45 @@ public class Main {
                 System.out.println(String.join(", ", kartyHrace2list));
                 System.out.println("------------------------");
                 hrac1 = false;
+                }
+
+            Uvitani(kartyHrace1list, kartyHrace2list, na_rade, Jednakarta);
+
+            String input = scanner.nextLine();
+            input = input.toLowerCase().trim();
+
+            if(input.equals("liz")){
+                if(hrac1){
+                    kartyHrace1list.add(karty.getOneKard() + karty.getOneColor());
+                }
+                else{
+                    kartyHrace2list.add(karty.getOneKard() + karty.getOneColor());
+                }
             }
+        }
+        while(hra);
+        scanner.close();
 
     }
+    public static void Uvitani(ArrayList<String> kartyHrace1list, ArrayList<String> kartyHrace2list, int na_rade, String Jednakarta){
+            System.out.println("1. Hráč");
+            System.out.println("Počet karet: " + kartyHrace1list.size());
+            
 
+            System.out.println("\n");
+
+
+            System.out.printf("Na stole je: %s\n", Jednakarta);
+
+            System.out.println("\n");
+
+
+            System.out.println("2. Hráč");
+            System.out.println("Počet karet: " + kartyHrace2list.size());
+            
+            System.out.println();
+            System.out.println("Jakou kartu chceš zahrát?");
+            System.out.println("Pokud nemáš žádně legalni tahy lízni si :) (napis liz)");
+            System.out.println();
+    }
 }
