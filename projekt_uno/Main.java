@@ -230,6 +230,18 @@ public class Main {
                     }
                 }
                 Jednakarta = input;
+
+                na_rade++;
+                if (kartyHrace1list.size() == 0){
+                System.out.println("Vyhrál hráč 1.");
+                hra = false;
+                }
+                else if(kartyHrace2list.size() == 0){
+                System.out.println("Vyhrál hráč 2.");
+                hra = false;
+                }   
+            
+            Konzole.clearConsole();
             }
         }
         while(hra);
